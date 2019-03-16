@@ -53,29 +53,43 @@ AppAsset::register($this);
                 </div>
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav ">
-                        <li class=" active"><a href="index.html" class="hyper "><span>Home</span></a></li>
+                        <li class=" active"><a href="index" class="hyper "><span>Home</span></a></li>
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Clothing<b class="caret"></b></span></a>
                             <ul class="dropdown-menu multi">
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <ul class="multi-column-dropdown">
-
-                                            <li><a href="women.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Women's Clothing</a></li>
-                                            <li><a href="men.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's Clothing</a></li>
-                                            <li><a href="kids.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Kid's Wear</a></li>
-                                            <li><a href="party.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Party Wear</a></li>
+                                        <?php
+                                            $menuItems = [
+                                            ['label' => "Women's Clothing", 'url' => ['/site/index']],
+                                            ['label' => "Men's Clothing", 'url' => ['/site/about']],
+                                            ['label' => "Kid's Wear", 'url' => ['/site/contact']],
+                                            ['label' => "Party Wear", 'url' => ['/site/contact']],
+                                            ];
+                                                echo Nav::widget([
+                                                    'options' => ['class' => 'fa fa-angle-right'],
+                                                    'items' => $menuItems,
+                                                ]);
+                                            ?>
 
                                         </ul>
 
                                     </div>
                                     <div class="col-sm-4">
                                         <ul class="multi-column-dropdown">
-                                            <li><a href="casuals.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Casuals</a></li>
-                                            <li><a href="night.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Night Wear</a></li>
-                                            <li><a href="formals.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Formals</a></li>
-                                            <li><a href="inner.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Inner Wear</a></li>
-
+                                            <?php
+                                            $menuItems = [
+                                                ['label' => "Casuals", 'url' => ['/site/contact']],
+                                                ['label' => "Night Wear", 'url' => ['/site/contact']],
+                                                ['label' => "Formals", 'url' => ['/site/contact']],
+                                                ['label' => "Inner Wear", 'url' => ['/site/contact']],
+                                            ];
+                                            echo Nav::widget([
+                                                'options' => ['class' => 'fa fa-angle-right'],
+                                                'items' => $menuItems,
+                                            ]);
+                                            ?>
                                         </ul>
                                     </div>
                                     <div class="col-sm-4 w3l">
@@ -85,6 +99,25 @@ AppAsset::register($this);
                                 </div>
                             </ul>
                         </li>
+                        <?php if (Yii::$app->user->isGuest) {
+                            $banm[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+                            $banm[] = ['label' => 'Login', 'url' => ['/site/login']];
+                        } else {
+                            $banm[] = '<li>'
+                                . Html::beginForm(['/site/logout'], 'post')
+                                . Html::submitButton(
+                                    'Logout (' . Yii::$app->user->identity->username . ')',
+                                    ['class' => 'btn btn-link logout']
+                                )
+                                . Html::endForm()
+                                . '</li>';
+
+                        }
+                        echo Nav::widget([
+                            'options' => ['class' => 'fa navbar-nav navbar-right'],
+                            'items' => $banm,
+                        ]);
+                        ?>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span> Personal Care <b class="caret"></b></span></a>
                             <ul class="dropdown-menu multi multi1">
@@ -113,10 +146,6 @@ AppAsset::register($this);
                                     <div class="col-sm-4">
 
                                         <ul class="multi-column-dropdown">
-<!--                                            <li><a href="haircare.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Hair Care </a></li>-->
-<!--                                            <li><a href="shoes.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Shoes</a></li>-->
-<!--                                            <li><a href="handbags.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Handbags</a></li>-->
-<!--                                            <li><a href="skincare.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Skin care</a></li>-->
                                             <?php
                                             $menuItems = [
                                                 ['label' => 'Hair Care', 'url' => ['/site/index']],
@@ -124,8 +153,9 @@ AppAsset::register($this);
                                                 ['label' => 'Handbags', 'url' => ['/site/contact']],
                                                 ['label' => 'Skin care', 'url' => ['/site/contact']],
                                             ];
+
                                             echo Nav::widget([
-                                                'options' => ['class' => 'fa fa-angle-right navbar-nav navbar-right'],
+                                                'options' => ['class' => 'fa navbar-nav navbar-right'],
                                                 'items' => $menuItems,
                                             ]);
                                             ?>
@@ -140,39 +170,24 @@ AppAsset::register($this);
                                 </div>
                             </ul>
                         </li>
-                        <li><a href="about.html" class="hyper"><span>About</span></a></li>
-                        <li><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
+                        <?php
+                        $urishbanm = [
+                            ['label' => 'Shop', 'url' => ['/shop']],
+                            ['label' => 'About', 'url' => ['/site/about']],
+                            ['label' => 'Contact us', 'url' => ['/site/contact']],
+                        ];
+
+                        echo Nav::widget([
+                            'options' => ['class' => 'fa navbar-nav navbar-right'],
+                            'items' => $urishbanm,
+                        ]);
+                        ?>
                     </ul>
                 </div>
             </nav>
         </div>
 
 <div class="wrap">
-    <?php
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    ?>
-
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -214,16 +229,14 @@ AppAsset::register($this);
         <div class="col-md-3 footer-grids fgd2">
             <h4>Information</h4>
             <ul>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="icons.html">Web Icons</a></li>
-                <li><a href="typography.html">Typography</a></li>
-                <li><a href="faq.html">FAQ's</a></li>
+                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/contact">Contact Us</a></li>
+                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/faq">FAQ's</a></li>
             </ul>
         </div>
         <div class="col-md-3 footer-grids fgd3">
             <h4>Shop</h4>
             <ul>
-                <li><a href="jewellery.html">Jewellery</a></li>
+                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/jewellery">Jewellery</a></li>
                 <li><a href="cosmetics.html">Cosmetics</a></li>
                 <li><a href="Shoes.html">Shoes</a></li>
                 <li><a href="deos.html">Deos</a></li>

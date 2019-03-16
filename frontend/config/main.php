@@ -11,6 +11,11 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'modules' => [
+        'product' => [
+            'class' => 'frontend\modules\product\Module',
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -36,14 +41,20 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'shop' => 'product/product',
+                'contact' =>  'site/contact',
+                'faq' => 'site/faq',
+                'jewellery' => 'site/jewellery',
+                'index' =>  'site/index'
+
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];

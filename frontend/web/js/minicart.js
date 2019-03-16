@@ -213,7 +213,7 @@ if (typeof Object.getOwnPropertyDescriptor === 'function') {
     Object.getOwnPropertyDescriptor({'a': 1}, 'a');
     exports.getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
   } catch (e) {
-    // IE8 dom element issue - use a try catch and default to valueObject
+    // IE8 dom element issue - use a try catch and product to valueObject
     exports.getOwnPropertyDescriptor = function (value, key) {
       try {
         return Object.getOwnPropertyDescriptor(value, key);
@@ -515,7 +515,7 @@ exports.format = function(f) {
  */
 /* legacy: obj, showHidden, depth, colors*/
 function inspect(obj, opts) {
-  // default options
+  // product options
   var ctx = {
     seen: [],
     stylize: stylizeNoColor
@@ -530,7 +530,7 @@ function inspect(obj, opts) {
     // got an "options" object
     exports._extend(ctx, opts);
   }
-  // set default options
+  // set product options
   if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
   if (isUndefined(ctx.depth)) ctx.depth = 2;
   if (isUndefined(ctx.colors)) ctx.colors = false;
@@ -1924,7 +1924,7 @@ var defaults = module.exports = {
 
 
 /**
- * Mixes in the user config with the default config.
+ * Mixes in the user config with the product config.
  *
  * @param {object} userConfig Configuration overrides
  * @return {object}

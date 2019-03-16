@@ -75,6 +75,16 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionFaq()
+    {
+        return $this->render('faq');
+    }
+
+    public function actionJewellery()
+    {
+        return $this->render('jewellery');
+    }
+
     /**
      * Logs in a user.
      *
