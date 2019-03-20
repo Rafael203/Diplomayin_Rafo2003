@@ -1,5 +1,5 @@
 /*
-* File: jqueryflexisel.js
+* File: jquery.flexisel.js
 * Version: 1.0.0
 * Description: Responsive carousel jQuery plugin
 * Author: 9bit Studios

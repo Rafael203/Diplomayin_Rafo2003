@@ -54,7 +54,7 @@ AppAsset::register($this);
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav ">
                         <li class=" active"><a href="index" class="hyper "><span>Home</span></a></li>
-                        <li class="dropdown ">
+                        <li class="dropdown ">vorner
                             <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Clothing<b class="caret"></b></span></a>
                             <ul class="dropdown-menu multi">
                                 <div class="row">
@@ -170,11 +170,11 @@ AppAsset::register($this);
                                 </div>
                             </ul>
                         </li>
+
                         <?php
                         $urishbanm = [
                             ['label' => 'Shop', 'url' => ['/shop']],
                             ['label' => 'About', 'url' => ['/site/about']],
-                            ['label' => 'Contact us', 'url' => ['/site/contact']],
                         ];
 
                         echo Nav::widget([
@@ -183,19 +183,24 @@ AppAsset::register($this);
                         ]);
                         ?>
                     </ul>
+
+                 </div>
+                <div class="col-md-4 search-agileinfo">
+                    <form action="<?= \yii\helpers\Url::to(['/shop'])?>" method="get">
+                        <input type="search" name="s" placeholder="Search..." required="">
+                        <button type="submit" class="btn btn-default search" aria-label="Left Align">
+                            <i class="fa fa-search" aria-hidden="true"> </i>
+                        </button>
+                    </form>
                 </div>
             </nav>
         </div>
 
-<div class="wrap">
-    <div class="container">
+
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <?= Alert::widget() ?>
         <?= $content ?>
-    </div>
-</div>
 
 <div class="newsletter">
     <div class="container">
@@ -246,10 +251,8 @@ AppAsset::register($this);
             <h4>My Account</h4>
             <ul>
 
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="recommended.html">Recommended </a></li>
-                <li><a href="payment.html">Payments</a></li>
+                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/login">Login</a></li>
+                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/register">Register</a></li>
             </ul>
         </div>
         <div class="clearfix"></div>

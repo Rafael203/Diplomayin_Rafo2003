@@ -49,9 +49,11 @@ return [
                 'shop' => 'product/product',
                 'contact' =>  'site/contact',
                 'faq' => 'site/faq',
+                'shop/cat/,id>' => 'product/products/cat',
                 'jewellery' => 'site/jewellery',
-                'index' =>  'site/index'
-
+                'index' =>  'site/index',
+                'login' => 'site/login',
+                'register' => 'site/register',
             ],
         ],
 
