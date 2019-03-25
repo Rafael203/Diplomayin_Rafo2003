@@ -20,25 +20,39 @@ class ProductController extends Controller
      * @return string
      */
 
-    public function actionIndex()
+    public function actionIndex($cat_id = 0, $brand_id = 0,$type= "")
     {
         $products = Product::find()->with(['brand',  'cat']);
         $categ = Categories::find()->asArray()->all();
         $brand = Brand::find()->asArray()->all();
         $s = Yii::$app->request->get('s');
-        if (!empty($s)){
+        if(!empty($type)){
+            if($type == 'sales'){
+                $products = $products->where(['<>','sale_price',''])->andWhere(['<>','sale_price','NULL']);
+            }
+            if($type == 'featured'){
+                $products = $products->where(['is_featured'=> 1]);
+            }
+            if($type == 'new'){
+                $products = $products->where(['is_new'=> 1]);
+            }
+        }
+
+        if(!empty($s)){
             $products =  $products->where(['LIKE', 'title', $s]);
         }
+        if(!empty($cat_id)){
+            $products = $products->where(['cat_id' => $cat_id]);
+        }
+        if(!empty($brand_id)){
+            $products = $products->where(['brand_id' => $brand_id]);
+        }
+
         $products = $products->asArray()->all();
-//        print_r($products);die;
+
 
         return $this->render('index', ['prods' => $products, 'categ' => $categ, 'brand' => $brand,]);
 
 
     }
-
-//    public function  actionCat($id){
-//        $prods = Product::find()->where(['cat-id' => $id])->asArray()->all();
-//        $this->renderPartial()
-//    }
 }

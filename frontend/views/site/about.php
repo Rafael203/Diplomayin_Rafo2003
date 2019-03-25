@@ -100,7 +100,7 @@
     <div class="container">
         <h3> Flat <span>50%</span> Off</h3>
         <h4>On women Accessories</h4>
-        <a href="Jewellery.html">Shop Now</a>
+        <a href="<?= \yii\helpers\Url::to('/shop') ?>">Shop Now</a>
     </div>
 </div>
 <!-- //about-bottom -->
@@ -111,7 +111,7 @@
         <div class="team-grids">
             <div class="col-md-3 team-grid">
                 <div class="team-img">
-                    <img src="images/t1.jpg" class="img-responsive" alt=" " />
+                    <img src="<?= \yii\helpers\Url::to('@web/images/t1.jpg') ?>" class="img-responsive" alt=" " />
                     <figcaption class="overlay">
                         <div class="social-icon">
                             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -126,7 +126,7 @@
             </div>
             <div class="col-md-3 team-grid">
                 <div class="team-img">
-                    <img src="images/t3.jpg" class="img-responsive" alt=" " />
+                    <img src="<?= \yii\helpers\Url::to('@web/images/t3.jpg') ?>" class="img-responsive" alt=" " />
                     <figcaption class="overlay">
                         <div class="social-icon">
                             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -141,7 +141,7 @@
             </div>
             <div class="col-md-3 team-grid">
                 <div class="team-img">
-                    <img src="images/t2.jpg" class="img-responsive" alt=" " />
+                    <img src="<?= \yii\helpers\Url::to('@web/images/t2.jpg') ?>" class="img-responsive" alt=" " />
                     <figcaption class="overlay">
                         <div class="social-icon">
                             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
@@ -156,7 +156,7 @@
             </div>
             <div class="col-md-3 team-grid">
                 <div class="team-img">
-                    <img src="images/t4.jpg" class="img-responsive" alt=" " />
+                    <img src="<?= \yii\helpers\Url::to('@web/images/t4.jpg') ?>" class="img-responsive" alt=" " />
                     <figcaption class="overlay">
                         <div class="social-icon">
                             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>

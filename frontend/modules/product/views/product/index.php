@@ -17,7 +17,18 @@
                     <div class="col-md-4 women-grids wp1 animated wow slideInUp" data-wow-delay=".5s">
                         <a href="single.html">
                             <div class="product-img">
-                                <img src="images/shp1.jpg" alt=""/>
+                                <img <?php
+                                if(empty($item['image'])){
+                                ?>
+                                           <img src="<?= \yii\helpers\Url::to('@web/images/no-image.png') ?>" alt="">
+                                <?php
+                                }
+                                else{
+                                    ?>
+                                    <img src="<?= \yii\helpers\Url::to("@web/images/".$item['image'])?>" alt="">
+                                    <?php
+                                }
+                                ?>
                                 <div class="p-mask">
                                     <form action="#" method="post">
                                         <input type="hidden" name="cmd" value="_cart"/>
@@ -38,7 +49,17 @@
                         <i class="fa fa-star yellow-star" aria-hidden="true"></i>
                         <i class="fa fa-star gray-star" aria-hidden="true"></i>
                         <h4><?= $item['title'] ?></h4>
-                        <h5><?= $item['price'] ?>$</h5>
+                    <?php
+                    if(!empty($item['sale_price'])){
+                        ?>
+                        $<span style="text-decoration: line-through"><?= $item['price'];?></span> <span style="font-size: 20px"><?= $item['sale_price'];?></span>
+                         <?php
+                            }else{
+                        ?>
+                        <span style="font-size: 20px">$ <?= $item['price'];?></span>
+                        <?php
+                    }
+                    ?>
                     </div>
                     <?php
                 }
@@ -55,7 +76,7 @@
                             <?php
                             foreach ($categ as $cat){
                                 ?>
-                                <li><a href="<?= \yii\helpers\Url::to('@web')?>/shop/cat/<?= $cat['id']?>"><?= $cat['title'] ?></a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/shop/cat'])?>/<?= $cat['id']?>"><?= $cat['title'] ?></a></li>
                                 <?php
                             }
                             ?>
@@ -71,7 +92,7 @@
                             <?php
                             foreach ($brand as $bra){
                                 ?>
-                                <li><a href="#"><?= $bra['title'] ?></a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/shop/brand'])?>/<?= $bra['id']?>"><?= $bra['title'] ?></a></li>
                                 <?php
                             }
                             ?>

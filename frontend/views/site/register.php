@@ -1,3 +1,29 @@
+<?php
+
+/* @var $this yii\web\View */
+/* @var $form yii\bootstrap\ActiveForm */
+/* @var $model \frontend\models\SignupForm */
+
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+
+$this->title = 'Signup';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<script>
+    $(document).ready(function(){
+        $(".dropdown").hover(
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+                $(this).toggleClass('open');
+            },
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+                $(this).toggleClass('open');
+            }
+        );
+    });
+</script>
 <div class="col-md-4 search-agileinfo">
     <form action="#" method="post">
         <input type="search" name="Search" placeholder="Search for a Product..." required="">
@@ -23,29 +49,19 @@
     <div class="main-agileits">
         <div class="form-w3agile">
             <h3>Register</h3>
-            <form action="#" method="post">
-                <div class="key">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <input  type="text"  name="Username" required=""  placeholder="Username">
-                    <div class="clearfix"></div>
-                </div>
-                <div class="key">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <input  type="text"  name="Email"  required=""  placeholder="Email">
-                    <div class="clearfix"></div>
-                </div>
-                <div class="key">
-                    <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input  type="password"  name="Password"  required="" placeholder="Password">
-                    <div class="clearfix"></div>
-                </div>
-                <div class="key">
-                    <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input  type="password" name="Confirm Password" required="" placeholder="Confirm Password">
-                    <div class="clearfix"></div>
-                </div>
-                <input type="submit" value="Register">
-            </form>
+            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+
+            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+
+            <?= $form->field($model, 'email') ?>
+
+            <?= $form->field($model, 'password')->passwordInput() ?>
+
+            <div class="form-group">
+                <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+            </div>
+
+            <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>

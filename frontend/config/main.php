@@ -17,6 +17,17 @@ return [
         ],
     ],
     'components' => [
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                ],
+                'common' => [
+                    'class' => 'yii\i18n\DbMessageSource',
+                ],
+            ],
+        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
@@ -46,17 +57,19 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'shop' => 'product/product',
+                'shop' => 'product/product/',
                 'contact' =>  'site/contact',
                 'faq' => 'site/faq',
-                'shop/cat/,id>' => 'product/products/cat',
+                'shop/cat/<cat_id>' => 'product/product/',
+                'shop/brand/<brand_id>' => 'product/product/',
+                '<type:(sales|new|featured)>' =>  'product/product/',
                 'jewellery' => 'site/jewellery',
-                'index' =>  'site/index',
+                'index' =>  '/site/index',
                 'login' => 'site/login',
                 'register' => 'site/register',
             ],
         ],
-
     ],
     'params' => $params,
 ];
+

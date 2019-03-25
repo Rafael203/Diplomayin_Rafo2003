@@ -1,37 +1,30 @@
+<?php
+Yii::$app->language = 'en';
+?>
 <div class="banner-agile">
     <div class="container">
         <h2>WELCOME TO</h2>
         <h3>FASHION <span>CLUB</span></h3>
         <p>Suspendisse sed tellus id libero pretium interdum. Suspendisse potenti. Quisque consectetur elit sit amet vehicula tristique. </p>
-        <a href="about.html">Read More</a>
+        <a href="<?= \yii\helpers\Url::to('@web') ?>/site/about">Read More</a>
     </div>
 </div>
 <div class="banner-bootom-w3-agileits">
     <div class="container">
-        <div class="col-md-5 bb-grids bb-left-agileits-w3layouts">
-            <a href="women.html"><div class="bb-left-agileits-w3layouts-inner">
-                    <h3>SALE</h3>
-                    <h4>upto<span>75%</span></h4>
-                </div></a>
-        </div>
         <div class="col-md-4 bb-grids bb-middle-agileits-w3layouts">
-            <a href="shoes.html"><div class="bb-middle-top">
+            <a href="<?= \yii\helpers\Url::to(['/sales']);?>"><div class="bb-middle-top">
                     <h3>SALE</h3>
                     <h4>upto<span>55%</span></h4>
                 </div></a>
-            <a href="jewellery.html"><div class="bb-middle-bottom">
-                    <h3>SALE</h3>
-                    <h4>upto<span>65%</span></h4>
+        </div>
+        <div class="col-md-4 bb-grids bb-middle-agileits-w3layouts">
+            <a href="<?= \yii\helpers\Url::to(['/new'])?>"><div class="bb-middle-top">
+                    <h3>New</h3>
                 </div></a>
         </div>
-        <div class="col-md-3 bb-grids bb-right-agileits-w3layouts">
-            <a href="watches.html"><div class="bb-right-top">
-                    <h3>SALE</h3>
-                    <h4>upto<span>50%</span></h4>
-                </div></a>
-            <a href="handbags.html"><div class="bb-right-bottom">
-                    <h3>SALE</h3>
-                    <h4>upto<span>60%</span></h4>
+        <div class="col-md-4 bb-grids bb-middle-agileits-w3layouts">
+            <a href="<?= \yii\helpers\Url::to(['/featured'])?>"><div class="bb-middle-top">
+                    <h3>Featured</h3>
                 </div></a>
         </div>
         <div class="clearfix"></div>
@@ -754,7 +747,7 @@
 <div class="fandt">
     <div class="container">
         <div class="col-md-6 features">
-            <h3>Our Services</h3>
+            <h3><?= Yii::t('app','our_services')?></h3>
             <div class="support">
                 <div class="col-md-2 ficon hvr-rectangle-out">
                     <i class="fa fa-user " aria-hidden="true"></i>
@@ -770,7 +763,7 @@
                     <i class="fa fa-bus" aria-hidden="true"></i>
                 </div>
                 <div class="col-md-10 ftext">
-                    <h4>Free shipping</h4>
+                    <h4><?= Yii::t('app','free_shipping')?></h4>
                     <p>Praesent rutrum vitae ligula sit amet vehicula. Donec eget libero nec dolor tincidunt vulputate.</p>
                 </div>
                 <div class="clearfix"></div>
@@ -780,7 +773,7 @@
                     <i class="fa fa-money" aria-hidden="true"></i>
                 </div>
                 <div class="col-md-10 ftext">
-                    <h4>100% money back</h4>
+                    <h4><?= Yii::t('app','100%_money_back')?></h4>
                     <p>Praesent rutrum vitae ligula sit amet vehicula. Donec eget libero nec dolor tincidunt vulputate.</p>
                 </div>
                 <div class="clearfix"></div>

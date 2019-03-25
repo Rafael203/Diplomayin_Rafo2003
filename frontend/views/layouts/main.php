@@ -25,10 +25,13 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+<?php
+Yii::$app->language = 'en';
+?>
 <div class="header-top-w3layouts">
     <div class="container">
         <div class="col-md-6 logo-w3">
-            <a href="index.html"><img src="images/logo2.png" alt=" " /><h1>FASHION<span>CLUB</span></h1></a>
+            <a href="<?= \yii\helpers\Url::to('@web') ?>/site/index"><img src="<?= \yii\helpers\Url::to('@web/images/logo2.png') ?>" alt=" " /><h1>FASHION<span>CLUB</span></h1></a>
         </div>
         <div class="col-md-6 phone-w3l">
             <ul>
@@ -53,8 +56,8 @@ AppAsset::register($this);
                 </div>
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav ">
-                        <li class=" active"><a href="index" class="hyper "><span>Home</span></a></li>
-                        <li class="dropdown ">vorner
+                        <li class=" active"><a href="<?= \yii\helpers\Url::to(['/site/index'])?>" class="hyper "><span>Home</span></a></li>
+                        <li class="dropdown ">
                             <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Clothing<b class="caret"></b></span></a>
                             <ul class="dropdown-menu multi">
                                 <div class="row">
@@ -93,7 +96,7 @@ AppAsset::register($this);
                                         </ul>
                                     </div>
                                     <div class="col-sm-4 w3l">
-                                        <a href="women.html"><img src="images/menu1.jpg" class="img-responsive" alt=""></a>
+                                        <a href="women.html"><img src="<?= \yii\helpers\Url::to('@web/images/menu1.jpg') ?>" class="img-responsive" alt=""></a>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -103,14 +106,7 @@ AppAsset::register($this);
                             $banm[] = ['label' => 'Signup', 'url' => ['/site/signup']];
                             $banm[] = ['label' => 'Login', 'url' => ['/site/login']];
                         } else {
-                            $banm[] = '<li>'
-                                . Html::beginForm(['/site/logout'], 'post')
-                                . Html::submitButton(
-                                    'Logout (' . Yii::$app->user->identity->username . ')',
-                                    ['class' => 'btn btn-link logout']
-                                )
-                                . Html::endForm()
-                                . '</li>';
+                            $banm[] = ['label' => 'Logout', 'linkOptions' => ['data-method' => 'post'], 'url' => ['/site/logout']];
 
                         }
                         echo Nav::widget([
@@ -164,7 +160,7 @@ AppAsset::register($this);
 
                                     </div>
                                     <div class="col-sm-4 w3l">
-                                        <a href="jewellery.html"><img src="images/menu2.jpg" class="img-responsive" alt=""></a>
+                                        <a href="jewellery.html"><img src="<?= \yii\helpers\Url::to('@web/images/menu2.jpg') ?>" class="img-responsive" alt=""></a>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -217,31 +213,33 @@ AppAsset::register($this);
         <div class="clearfix"> </div>
     </div>
 </div>
+
+
 <div class="footer">
     <div class="container">
         <div class="col-md-3 footer-grids fgd1">
-            <a href="index.html"><img src="images/logo2.png" alt=" " / class="margin-d"><h3>FASHION<span>CLUB</span></h3></a>
+            <a href="index.html"><img src="<?= \yii\helpers\Url::to('@web/images/logo2.png') ?>" alt=" " / class="margin-d"><h3>FASHION<span>CLUB</span></h3></a>
             <ul>
                 <li>1234k Avenue, 4th block,</li>
                 <li>New York City.</li>
                 <li><a href="mailto:info@example.com">info@example.com</a></li>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://dribbble.com/"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
             </ul>
         </div>
         <div class="col-md-3 footer-grids fgd2">
             <h4>Information</h4>
             <ul>
-                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/contact">Contact Us</a></li>
-                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/faq">FAQ's</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/contact']) ?>">Contact Us</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/site/faq']) ?>">FAQ's</a></li>
             </ul>
         </div>
         <div class="col-md-3 footer-grids fgd3">
             <h4>Shop</h4>
             <ul>
-                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/jewellery">Jewellery</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/site/index']) ?>/">Jewellery</a></li>
                 <li><a href="cosmetics.html">Cosmetics</a></li>
                 <li><a href="Shoes.html">Shoes</a></li>
                 <li><a href="deos.html">Deos</a></li>
@@ -251,8 +249,8 @@ AppAsset::register($this);
             <h4>My Account</h4>
             <ul>
 
-                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/login">Login</a></li>
-                <li><a href="<?= \yii\helpers\Url::to('@web') ?>/register">Register</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/site/login']) ?>">Login</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/site/register']) ?>">Register</a></li>
             </ul>
         </div>
         <div class="clearfix"></div>
