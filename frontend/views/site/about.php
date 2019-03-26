@@ -114,10 +114,10 @@
                     <img src="<?= \yii\helpers\Url::to('@web/images/t1.jpg') ?>" class="img-responsive" alt=" " />
                     <figcaption class="overlay">
                         <div class="social-icon">
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://dribbble.com/"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </figcaption>
                 </div>
@@ -129,10 +129,10 @@
                     <img src="<?= \yii\helpers\Url::to('@web/images/t3.jpg') ?>" class="img-responsive" alt=" " />
                     <figcaption class="overlay">
                         <div class="social-icon">
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://dribbble.com/"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </figcaption>
                 </div>
@@ -144,10 +144,10 @@
                     <img src="<?= \yii\helpers\Url::to('@web/images/t2.jpg') ?>" class="img-responsive" alt=" " />
                     <figcaption class="overlay">
                         <div class="social-icon">
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://dribbble.com/"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </figcaption>
                 </div>
@@ -159,10 +159,10 @@
                     <img src="<?= \yii\helpers\Url::to('@web/images/t4.jpg') ?>" class="img-responsive" alt=" " />
                     <figcaption class="overlay">
                         <div class="social-icon">
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://dribbble.com/"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </figcaption>
                 </div>

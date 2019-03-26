@@ -1269,10 +1269,7 @@ p.sbmincart-empty-text {
 }
 /*-- //about --*/
 /*-- products --*/
-.products {
-    background: url(../images/a1.jpg)no-repeat center 0px;
-    background-size: cover;
-}
+
 .products .title h3 {
     text-align: left;
 }

@@ -181,17 +181,25 @@ Yii::$app->language = 'en';
                     </ul>
 
                  </div>
-                <div class="col-md-4 search-agileinfo">
-                    <form action="<?= \yii\helpers\Url::to(['/shop'])?>" method="get">
-                        <input type="search" name="s" placeholder="Search..." required="">
-                        <button type="submit" class="btn btn-default search" aria-label="Left Align">
-                            <i class="fa fa-search" aria-hidden="true"> </i>
-                        </button>
-                    </form>
-                </div>
             </nav>
         </div>
-
+        <div class="col-md-4 search-agileinfo">
+                <form action="<?= \yii\helpers\Url::to(['/shop'])?>" method="get">
+                    <input type="search" name="s" placeholder="Search..." required="">
+                    <button type="submit" class="btn btn-default search" aria-label="Left Align">
+                        <i class="fa fa-search" aria-hidden="true"> </i>
+                    </button>
+                </form>
+        </div>
+        <div class="col-md-1 cart-wthree">
+            <div class="cart">
+                <form action="#" method="post" class="last">
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="display" value="1" />
+                    <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                </form>
+            </div>
+        </div>
 
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],

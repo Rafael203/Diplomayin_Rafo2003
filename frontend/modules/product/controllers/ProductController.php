@@ -26,6 +26,7 @@ class ProductController extends Controller
         $categ = Categories::find()->asArray()->all();
         $brand = Brand::find()->asArray()->all();
         $s = Yii::$app->request->get('s');
+
         if(!empty($type)){
             if($type == 'sales'){
                 $products = $products->where(['<>','sale_price',''])->andWhere(['<>','sale_price','NULL']);
@@ -47,12 +48,22 @@ class ProductController extends Controller
         if(!empty($brand_id)){
             $products = $products->where(['brand_id' => $brand_id]);
         }
+        $pagination = new Pagination([
+            'defaultPageSize' => 6,
+            'totalCount' => $products->count()
+        ]);
 
-        $products = $products->asArray()->all();
+        $products = $products->offset($pagination->offset)->limit($pagination->limit)->asArray()->all();
 
 
-        return $this->render('index', ['prods' => $products, 'categ' => $categ, 'brand' => $brand,]);
+        return $this->render('index', ['prods' => $products, 'categ' => $categ, 'brand' => $brand,'pagination' => $pagination]);
 
 
+    }
+    public function actionProduct($id = 0){
+
+        $one_prod = Product::find()->where('id' == $id)->with(['images'])->asArray()->one();
+
+        return $this->render('product',['prod' => $one_prod]);
     }
 }
