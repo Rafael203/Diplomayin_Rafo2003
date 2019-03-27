@@ -23,7 +23,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+<body class="<?= \dmstr\helpers\AdminLteHelper::skinClass() ?>">
 <?php $this->beginBody() ?>
 <?php
 Yii::$app->language = 'en';
@@ -31,7 +31,7 @@ Yii::$app->language = 'en';
 <div class="header-top-w3layouts">
     <div class="container">
         <div class="col-md-6 logo-w3">
-            <a href="<?= \yii\helpers\Url::to('@web') ?>/site/index"><img src="<?= \yii\helpers\Url::to('@web/images/logo2.png') ?>" alt=" " /><h1>FASHION<span>CLUB</span></h1></a>
+            <a href="<?= \yii\helpers\Url::to(['@web/']) ?>"><img src="<?= \yii\helpers\Url::to('@web/images/logo2.png') ?>" alt=" " /><h1>FASHION<span>CLUB</span></h1></a>
         </div>
         <div class="col-md-6 phone-w3l">
             <ul>
@@ -200,12 +200,12 @@ Yii::$app->language = 'en';
                 </form>
             </div>
         </div>
-
+<div class="clearfix"></div>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= $content ?>
-
+        <div class="clearfix"></div>
 <div class="newsletter">
     <div class="container">
         <div class="col-md-6 w3agile_newsletter_left">
@@ -257,8 +257,8 @@ Yii::$app->language = 'en';
             <h4>My Account</h4>
             <ul>
 
-                <li><a href="<?= \yii\helpers\Url::to(['/site/login']) ?>">Login</a></li>
-                <li><a href="<?= \yii\helpers\Url::to(['/site/register']) ?>">Register</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/login']) ?>">Login</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/register']) ?>">Register</a></li>
             </ul>
         </div>
         <div class="clearfix"></div>

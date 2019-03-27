@@ -1,4 +1,4 @@
-$(window).load(function() {
+$(window).on('load',function() {
     $("#flexiselDemo1").flexisel({
         visibleItems: 4,
         animationSpeed: 1000,
@@ -31,7 +31,16 @@ $(document).ready(function () {
         fit: true   // 100% fit in a container
     });
 
-
+    $('.dropdown').hover(
+        function () {
+            $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+            $(this).toggleClass('open');
+        },
+        function () {
+            $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+            $(this).toggleClass('open');
+        }
+    );
 
 });
 

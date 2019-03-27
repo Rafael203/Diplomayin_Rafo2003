@@ -62,7 +62,7 @@ class ProductController extends Controller
     }
     public function actionProduct($id = 0){
 
-        $one_prod = Product::find()->where('id' == $id)->with(['images'])->asArray()->one();
+        $one_prod = Product::find()->where(['id' => $id])->with(['images'])->asArray()->one();
 
         return $this->render('product',['prod' => $one_prod]);
     }

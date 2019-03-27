@@ -17,6 +17,20 @@ return [
         ],
     ],
     'components' => [
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@app/views' => '@web/views/layouts'
+                ],
+            ],
+        ],
+        'assetManager' => [
+            'bundles' => [
+                'dmstr\web\AdminLteAsset' => [
+                    'skin' => 'skin-red',
+                    ],
+                ],
+            ],
         'i18n' => [
             'translations' => [
                 'app' => [

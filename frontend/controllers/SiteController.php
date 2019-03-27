@@ -1,6 +1,8 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Product;
+use frontend\modules\product\models\Categories;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -72,17 +74,16 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $products = Product::find()->with(['brand',  'cat']);
+        $categ = Categories::find()->asArray()->all();
+
+        $products = $products->asArray()->all();
+        return $this->render('index',['prods' => $products, 'categ' => $categ]);
     }
 
     public function actionFaq()
     {
         return $this->render('faq');
-    }
-
-    public function actionJewellery()
-    {
-        return $this->render('jewellery');
     }
 
     /**

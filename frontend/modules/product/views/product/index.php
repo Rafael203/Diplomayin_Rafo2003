@@ -9,6 +9,7 @@ use yii\widgets\Pjax;
                 <div class="w3ls_dresses_grid_left_grid_sub">
                     <div class="ecommerce_dres-type">
                         <ul>
+                            <li><a href="<?= \yii\helpers\Url::to(['/shop'])?>">All</a></li>
                             <?php
                             foreach ($categ as $cat){
                                 ?>
@@ -25,6 +26,7 @@ use yii\widgets\Pjax;
                 <div class="w3ls_dresses_grid_left_grid_sub">
                     <div class="ecommerce_color">
                         <ul>
+                            <li><a href="<?= \yii\helpers\Url::to(['/shop'])?>">All</a></li>
                             <?php
                             foreach ($brand as $bra){
                                 ?>
@@ -98,6 +100,7 @@ use yii\widgets\Pjax;
                     }
                 } ?>
             </div>
+            <div class="clearfix"></div>
             <?php
             echo LinkPager::widget(['pagination' => $pagination]);
             ?>
