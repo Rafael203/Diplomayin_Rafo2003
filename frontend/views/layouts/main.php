@@ -31,7 +31,7 @@ Yii::$app->language = 'en';
 <div class="header-top-w3layouts">
     <div class="container">
         <div class="col-md-6 logo-w3">
-            <a href="<?= \yii\helpers\Url::to(['@web/']) ?>"><img src="<?= \yii\helpers\Url::to('@web/images/logo2.png') ?>" alt=" " /><h1>FASHION<span>CLUB</span></h1></a>
+            <a href="<?= \yii\helpers\Url::to(['/']) ?>"><img src="<?= \yii\helpers\Url::to('@web/images/logo2.png') ?>" alt=" " /><h1>FASHION<span>CLUB</span></h1></a>
         </div>
         <div class="col-md-6 phone-w3l">
             <ul>
@@ -56,7 +56,7 @@ Yii::$app->language = 'en';
                 </div>
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav ">
-                        <li class=" active"><a href="<?= \yii\helpers\Url::to(['/site/index'])?>" class="hyper "><span>Home</span></a></li>
+                        <li class=" active"><a href="<?= \yii\helpers\Url::to(['/'])?>" class="hyper "><span>Home</span></a></li>
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Clothing<b class="caret"></b></span></a>
                             <ul class="dropdown-menu multi">
@@ -170,7 +170,7 @@ Yii::$app->language = 'en';
                         <?php
                         $urishbanm = [
                             ['label' => 'Shop', 'url' => ['/shop']],
-                            ['label' => 'About', 'url' => ['/site/about']],
+                            ['label' => 'About', 'url' => ['/about']],
                         ];
 
                         echo Nav::widget([
@@ -192,12 +192,10 @@ Yii::$app->language = 'en';
                 </form>
         </div>
         <div class="col-md-1 cart-wthree">
-            <div class="cart">
-                <form action="#" method="post" class="last">
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
+            <div class="cart" href="#">
+                <form action="<?= \yii\helpers\Url::to(['/cart']) ?>" method="post" class="last">
                     <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-                </form>
+               </form>
             </div>
         </div>
 <div class="clearfix"></div>

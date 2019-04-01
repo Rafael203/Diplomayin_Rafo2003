@@ -3,9 +3,9 @@
 (function ($) {
     $.fn.extend({
         easyResponsiveTabs: function (options) {
-            //Set the default values, use comma to separate the settings, example:
+            //Set the cart values, use comma to separate the settings, example:
             var defaults = {
-                type: 'default', //default, vertical, accordion;
+                type: 'default', //cart, vertical, accordion;
                 width: 'auto',
                 fit: true
             }

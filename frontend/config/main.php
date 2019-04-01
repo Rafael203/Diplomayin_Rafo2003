@@ -15,6 +15,9 @@ return [
         'product' => [
             'class' => 'frontend\modules\product\Module',
         ],
+        'cart' => [
+            'class' => 'frontend\modules\cart\Module',
+        ],
     ],
     'components' => [
         'view' => [
@@ -72,14 +75,15 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'shop' => 'product/product/',
+                'about' => 'site/about',
                 'contact' =>  'site/contact',
+                'cart' =>  'cart/cart/',
                 'faq' => 'site/faq',
                 'shop/cat/<cat_id>' => 'product/product/',
                 'shop/brand/<brand_id>' => 'product/product/',
                 'products/<id>' => 'product/product/product',
                 '<type:(sales|new|featured)>' =>  'product/product/',
                 'jewellery' => 'site/jewellery',
-                'index' =>  '/site/index',
                 'login' => 'site/login',
                 'register' => 'site/register',
             ],

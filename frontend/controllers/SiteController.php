@@ -154,6 +154,11 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionCart()
+    {
+        return $this->render('cart');
+    }
+
     public function actionRegister()
     {
         return $this->render('register');
