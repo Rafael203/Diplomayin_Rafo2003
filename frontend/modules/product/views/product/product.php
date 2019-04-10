@@ -1,3 +1,7 @@
+<?php
+//var_dump($image['image_src'])
+//?>
+
 <div class="clearfix"></div>
 </div>
 </div>
@@ -12,16 +16,11 @@
                             <?php
 
                             foreach ($prod['images'] as $image) {
-//                                echo '<pre>';
-//                                var_dump($image["image_src"]);
-//                            die;
-                                ?>
 
-                                <li data-thumb="images/s1.jpg">
-                                    <?php if (empty($image["image_src"])) { ?>
-                                        <div class="thumb-image detail_images"><img
-                                                    src="<?= \yii\helpers\Url::to(['@web/images/no-image.png']) ?>"
-                                                    data-imagezoom="true" class="img-responsive" alt=""></div>
+                                ?>
+                                    <?php
+                                    if (!empty($image["image_src"])) { ?>
+                                        <img src="<?= \yii\helpers\Url::to('@web/images/no-image.png') ?>" width="300px" class="img-responsive" alt="">
                                     <?php } else {
                                         ?>
                                         <div class="thumb-image detail_images"><img
@@ -29,7 +28,6 @@
                                                     data-imagezoom="true" class="img-responsive" alt=""></div>
                                         <?php
                                     } ?>
-                                </li>
                                 <?php
                             }
                             ?>
@@ -84,34 +82,63 @@
             </div>
         </div>
 
+        <div id="reviews">
+<!--            <div>-->
+<!--                --><?php
+//                if (!empty($product['reviews'])) {
+//                    ?>
+<!--                    <ul>-->
+<!--                        --><?php
+//                        foreach ($product['reviews'] as $review) {
+//                            echo '<li>' . $review['user']['username'] . ' - ' . $review['comment'] . '</li>';
+//
+//                        }
+//                        ?>
+<!--                    </ul>-->
+<!--                    --><?php
+//                }
+//                ?>
+<!--            </div>-->
+<!--            --><?php
+//            if (!Yii::$app->user->isGuest) {
+//                $form = \yii\bootstrap\ActiveForm::begin();
+//                echo $form->field($model, 'comment')->textarea();
+//                echo \yii\helpers\Html::submitButton('submit');
+//                \yii\bootstrap\ActiveForm::end();
+//            }
+//
+//            ?>
+
+        </div>
+
         <!-- collapse-tabs -->
         <div class="collpse tabs">
             <h3 class="w3ls-title">About this item</h3>
             <div class="panel-group collpse" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                        <h4 class="panel-title">
-                            <a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion"
-                               href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="fa fa-file-text-o fa-icon" aria-hidden="true"></i> Description <span
-                                        class="fa fa-angle-down fa-arrow" aria-hidden="true"></span> <i
-                                        class="fa fa-angle-up fa-arrow" aria-hidden="true"></i>
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                         aria-labelledby="headingOne">
-                        <div class="panel-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
-                            probably haven't heard of them accusamus labore sustainable VHS.
+                <?php
+                if(!empty($prod['description'])) {
+                    ?>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion"
+                                   href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fa fa-file-text-o fa-icon" aria-hidden="true"></i> Description <span
+                                            class="fa fa-angle-down fa-arrow" aria-hidden="true"></span> <i
+                                            class="fa fa-angle-up fa-arrow" aria-hidden="true"></i>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <?= $prod['description']; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <?php
+                }
+                ?>
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">

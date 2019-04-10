@@ -20,8 +20,8 @@ class AppAsset extends AssetBundle
 
     ];
     public $js = [
-//        'js/jquery-1.11.1.min.js',
-//        'js/bootstrap.js',
+        'js/jquery-1.11.1.min.js',
+        'js/bootstrap.js',
         'js/easyResponsiveTabs.js',
         'js/jquery.wmuSlider.js',
         'js/jquery.flexisel.js',

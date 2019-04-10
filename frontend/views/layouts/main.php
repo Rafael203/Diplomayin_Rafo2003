@@ -57,51 +57,6 @@ Yii::$app->language = 'en';
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul class="nav navbar-nav ">
                         <li class=" active"><a href="<?= \yii\helpers\Url::to(['/'])?>" class="hyper "><span>Home</span></a></li>
-                        <li class="dropdown ">
-                            <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Clothing<b class="caret"></b></span></a>
-                            <ul class="dropdown-menu multi">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
-                                        <?php
-                                            $menuItems = [
-                                            ['label' => "Women's Clothing", 'url' => ['/site/index']],
-                                            ['label' => "Men's Clothing", 'url' => ['/site/about']],
-                                            ['label' => "Kid's Wear", 'url' => ['/site/contact']],
-                                            ['label' => "Party Wear", 'url' => ['/site/contact']],
-                                            ];
-                                                echo Nav::widget([
-                                                    'options' => ['class' => 'fa fa-angle-right'],
-                                                    'items' => $menuItems,
-                                                ]);
-                                            ?>
-
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
-                                            <?php
-                                            $menuItems = [
-                                                ['label' => "Casuals", 'url' => ['/site/contact']],
-                                                ['label' => "Night Wear", 'url' => ['/site/contact']],
-                                                ['label' => "Formals", 'url' => ['/site/contact']],
-                                                ['label' => "Inner Wear", 'url' => ['/site/contact']],
-                                            ];
-                                            echo Nav::widget([
-                                                'options' => ['class' => 'fa fa-angle-right'],
-                                                'items' => $menuItems,
-                                            ]);
-                                            ?>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-4 w3l">
-                                        <a href="women.html"><img src="<?= \yii\helpers\Url::to('@web/images/menu1.jpg') ?>" class="img-responsive" alt=""></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </ul>
-                        </li>
                         <?php if (Yii::$app->user->isGuest) {
                             $banm[] = ['label' => 'Signup', 'url' => ['/site/signup']];
                             $banm[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -114,58 +69,6 @@ Yii::$app->language = 'en';
                             'items' => $banm,
                         ]);
                         ?>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span> Personal Care <b class="caret"></b></span></a>
-                            <ul class="dropdown-menu multi multi1">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
-<!--                                            <li><a href="jewellery.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Jewellery </a></li>-->
-<!--                                            <li><a href="watches.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Watches</a></li>-->
-<!--                                            <li><a href="cosmetics.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cosmetics</a></li>-->
-<!--                                            <li><a href="deos.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Deo & Perfumes</a></li>-->
-                                            <?php
-                                            $menuItems = [
-                                                ['label' => 'Jewellery', 'url' => ['/site/index']],
-                                                ['label' => 'Watches', 'url' => ['/site/about']],
-                                                ['label' => 'Cosmetics', 'url' => ['/site/contact']],
-                                                ['label' => 'Deo & Perfumes', 'url' => ['/site/contact']],
-                                            ];
-                                            echo Nav::widget([
-                                                'options' => ['class' => 'navbar-nav navbar-right'],
-                                                'items' => $menuItems,
-                                            ]);
-                                            ?>
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4">
-
-                                        <ul class="multi-column-dropdown">
-                                            <?php
-                                            $menuItems = [
-                                                ['label' => 'Hair Care', 'url' => ['/site/index']],
-                                                ['label' => 'Shoes', 'url' => ['/site/about']],
-                                                ['label' => 'Handbags', 'url' => ['/site/contact']],
-                                                ['label' => 'Skin care', 'url' => ['/site/contact']],
-                                            ];
-
-                                            echo Nav::widget([
-                                                'options' => ['class' => 'fa navbar-nav navbar-right'],
-                                                'items' => $menuItems,
-                                            ]);
-                                            ?>
-
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4 w3l">
-                                        <a href="jewellery.html"><img src="<?= \yii\helpers\Url::to('@web/images/menu2.jpg') ?>" class="img-responsive" alt=""></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </ul>
-                        </li>
 
                         <?php
                         $urishbanm = [
@@ -193,10 +96,12 @@ Yii::$app->language = 'en';
         </div>
         <div class="col-md-1 cart-wthree">
             <div class="cart" href="#">
-                <form action="<?= \yii\helpers\Url::to(['/cart']) ?>" method="post" class="last">
+                <form action="<?= \yii\helpers\Url::to(['@web/cart']) ?>" method="post" class="last">
                     <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
                </form>
             </div>
+        </div>
+        </div>
         </div>
 <div class="clearfix"></div>
         <?= Breadcrumbs::widget([
@@ -204,21 +109,6 @@ Yii::$app->language = 'en';
         ]) ?>
         <?= $content ?>
         <div class="clearfix"></div>
-<div class="newsletter">
-    <div class="container">
-        <div class="col-md-6 w3agile_newsletter_left">
-            <h3>Newsletter</h3>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt.</p>
-        </div>
-        <div class="col-md-6 w3agile_newsletter_right">
-            <form action="#" method="post">
-                <input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-                <input type="submit" value="Subscribe" />
-            </form>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-</div>
 
 
 <div class="footer">

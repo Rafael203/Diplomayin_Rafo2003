@@ -9,7 +9,7 @@ Yii::$app->language = 'en';
         <h2>WELCOME TO</h2>
         <h3>FASHION <span>CLUB</span></h3>
         <p>Suspendisse sed tellus id libero pretium interdum. Suspendisse potenti. Quisque consectetur elit sit amet vehicula tristique. </p>
-        <a href="<?= \yii\helpers\Url::to(['/']) ?>">Read More</a>
+        <a href="<?= \yii\helpers\Url::to(['/about']) ?>">Read More</a>
     </div>
 </div>
 <div class="banner-bootom-w3-agileits">

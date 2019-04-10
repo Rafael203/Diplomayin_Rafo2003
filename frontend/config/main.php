@@ -81,6 +81,8 @@ return [
                 'faq' => 'site/faq',
                 'shop/cat/<cat_id>' => 'product/product/',
                 'shop/brand/<brand_id>' => 'product/product/',
+//                'shop/size/<size_id>' => 'product/product/',
+                'show/<show_count>' => 'product/product',
                 'products/<id>' => 'product/product/product',
                 '<type:(sales|new|featured)>' =>  'product/product/',
                 'jewellery' => 'site/jewellery',
