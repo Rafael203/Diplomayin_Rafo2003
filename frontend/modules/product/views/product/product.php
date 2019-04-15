@@ -19,7 +19,7 @@
 
                                 ?>
                                     <?php
-                                    if (!empty($image["image_src"])) { ?>
+                                    if (empty($image["image_src"])) { ?>
                                         <img src="<?= \yii\helpers\Url::to('@web/images/no-image.png') ?>" width="300px" class="img-responsive" alt="">
                                     <?php } else {
                                         ?>

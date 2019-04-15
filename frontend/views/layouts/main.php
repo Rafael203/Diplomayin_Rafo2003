@@ -42,7 +42,7 @@ Yii::$app->language = 'en';
         <div class="clearfix"></div>
     </div>
 </div>
-<div class="header-bottom-w3ls">
+<div class="header-bottom-w3ls" style="margin-bottom: 40px">
     <div class="container">
         <div class="col-md-7 navigation-agileits">
             <nav class="navbar navbar-default">
@@ -58,7 +58,7 @@ Yii::$app->language = 'en';
                     <ul class="nav navbar-nav ">
                         <li class=" active"><a href="<?= \yii\helpers\Url::to(['/'])?>" class="hyper "><span>Home</span></a></li>
                         <?php if (Yii::$app->user->isGuest) {
-                            $banm[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+                            $banm[] = ['label' => 'Signup', 'url' => ['/site/register']];
                             $banm[] = ['label' => 'Login', 'url' => ['/site/login']];
                         } else {
                             $banm[] = ['label' => 'Logout', 'linkOptions' => ['data-method' => 'post'], 'url' => ['/site/logout']];
@@ -74,6 +74,8 @@ Yii::$app->language = 'en';
                         $urishbanm = [
                             ['label' => 'Shop', 'url' => ['/shop']],
                             ['label' => 'About', 'url' => ['/about']],
+                            ['label' => 'Contact', 'url' => ['/contact']],
+                            ['label' => 'Blog', 'url' => ['/blog']],
                         ];
 
                         echo Nav::widget([
@@ -95,11 +97,7 @@ Yii::$app->language = 'en';
                 </form>
         </div>
         <div class="col-md-1 cart-wthree">
-            <div class="cart" href="#">
-                <form action="<?= \yii\helpers\Url::to(['@web/cart']) ?>" method="post" class="last">
-                    <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-               </form>
-            </div>
+            <a href="<?= \yii\helpers\Url::to(['/cart']) ?>"><i class="fa fa-cart-arrow-down" aria-hidden="true" style="color: #0a0a0a"></i></a>
         </div>
         </div>
         </div>
@@ -129,16 +127,16 @@ Yii::$app->language = 'en';
             <h4>Information</h4>
             <ul>
                 <li><a href="<?= \yii\helpers\Url::to(['/contact']) ?>">Contact Us</a></li>
-                <li><a href="<?= \yii\helpers\Url::to(['/site/faq']) ?>">FAQ's</a></li>
+                <li><a href="#">FAQ's</a></li>
             </ul>
         </div>
         <div class="col-md-3 footer-grids fgd3">
             <h4>Shop</h4>
             <ul>
-                <li><a href="<?= \yii\helpers\Url::to(['/site/index']) ?>/">Jewellery</a></li>
-                <li><a href="cosmetics.html">Cosmetics</a></li>
-                <li><a href="Shoes.html">Shoes</a></li>
-                <li><a href="deos.html">Deos</a></li>
+                <li><a href="#">Jewellery</a></li>
+                <li><a href="#">Cosmetics</a></li>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Deos</a></li>
             </ul>
         </div>
         <div class="col-md-3 footer-grids fgd4">

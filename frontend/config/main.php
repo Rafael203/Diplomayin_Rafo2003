@@ -18,6 +18,9 @@ return [
         'cart' => [
             'class' => 'frontend\modules\cart\Module',
         ],
+        'blog' => [
+            'class' => 'frontend\modules\blog\Module',
+        ],
     ],
     'components' => [
         'view' => [
@@ -75,6 +78,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'shop' => 'product/product/',
+                'blog' => 'blog/blog/',
                 'about' => 'site/about',
                 'contact' =>  'site/contact',
                 'cart' =>  'cart/cart/',
@@ -84,6 +88,7 @@ return [
 //                'shop/size/<size_id>' => 'product/product/',
                 'show/<show_count>' => 'product/product',
                 'products/<id>' => 'product/product/product',
+                'blogs/<id>' => 'blog/blog/blog',
                 '<type:(sales|new|featured)>' =>  'product/product/',
                 'jewellery' => 'site/jewellery',
                 'login' => 'site/login',

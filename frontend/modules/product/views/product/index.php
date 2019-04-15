@@ -63,7 +63,7 @@ use yii\widgets\Pjax;
                                 <?php
                                 if(empty($item['image'])){
                                     ?>
-                                    <img src="<?= \yii\helpers\Url::to('@web/images/no-image.png') ?>" alt="">
+                                    <img src="<?= \yii\helpers\Url::to('@web/images/no-image.png') ?>" alt="" style="width: 100%">
                                     <?php
                                 }
                                 else{
