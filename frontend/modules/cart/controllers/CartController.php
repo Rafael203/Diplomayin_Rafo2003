@@ -2,6 +2,7 @@
 
 namespace frontend\modules\cart\controllers;
 
+use common\models\Cart;
 use yii\web\Controller;
 
 /**
@@ -13,8 +14,12 @@ class CartController extends Controller
      * Renders the index view for the module
      * @return string
      */
-    public function actionIndex()
+    public function actionIndex($prod_id = 0)
     {
-       return $this->render('index');
+        $cart = new Cart();
+
+
+
+       return $this->render('index', ['model' => $cart]);
     }
 }

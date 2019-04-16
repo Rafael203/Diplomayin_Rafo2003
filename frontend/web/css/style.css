@@ -298,8 +298,28 @@ button.w3view-cart:focus{
     -webkit-transform: scale3d(1.1, 1.1, 1);
     transform: scale3d(1.1, 1.1, 1);
 }
-.bb-middle-top{
+.bb-middle-top-1{
     background:url(../images/bb2.jpg) no-repeat 0px 0px;
+    background-size:cover;
+    min-height:235px;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    width:100%;
+}
+.bb-middle-top-2{
+    background:url(../images/bb3.jpg) no-repeat 0px 0px;
+    background-size:cover;
+    min-height:235px;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    width:100%;
+}
+.bb-middle-top-3{
+    background:url(../images/bb4.jpg) no-repeat 0px 0px;
     background-size:cover;
     min-height:235px;
     -moz-transition: all 1s;

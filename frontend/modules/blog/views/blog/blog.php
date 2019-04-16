@@ -1,7 +1,3 @@
-<?php
-//echo '<pre>';
-//var_dump($blog);
-//?>
 <div class="col-md-10" style="margin-left: 10%">
 <h1><?= $blog['title']?></h1><br>
 <h3><?= $blog['created_at']?></h3><br>

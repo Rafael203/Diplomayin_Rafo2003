@@ -47,6 +47,21 @@ use yii\widgets\Pjax;
                 </div>
             </div>
         </div>
+        <div class="w3ls_dresses_grid_left_grid">
+            <h3>Sort</h3>
+            <div class="w3ls_dresses_grid_left_grid_sub">
+                <div class="ecommerce_color">
+                    <ul>
+                        <li><a href="<?= \yii\helpers\Url::to(['/shop'])?>">All</a></li>
+                        <li><a href="<?= \yii\helpers\Url::to(['/sales'])?>">Sale</a></li>
+                        <li><a href="<?= \yii\helpers\Url::to(['/new'])?>">New</a></li>
+                        <li><a href="<?= \yii\helpers\Url::to(['/featured'])?>">Featured</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
         <div class="pagination">
         </div>
     </div>
@@ -73,13 +88,8 @@ use yii\widgets\Pjax;
                                 }
                                 ?>
                                 <div class="p-mask">
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="cmd" value="_cart"/>
-                                        <input type="hidden" name="add" value="1"/>
-                                        <input type="hidden" name="w3ls1_item" value="Shoes"/>
-                                        <input type="hidden" name="amount" value="50.00"/>
-                                        <button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus"
-                                                                                              aria-hidden="true"></i>
+                                    <form action="<?= \yii\helpers\Url::to(['/cart/add/'.$item['id']]) ?>" method="post">
+                                        <button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i>
                                             Add to cart
                                         </button>
                                     </form>

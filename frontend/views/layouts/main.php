@@ -127,16 +127,20 @@ Yii::$app->language = 'en';
             <h4>Information</h4>
             <ul>
                 <li><a href="<?= \yii\helpers\Url::to(['/contact']) ?>">Contact Us</a></li>
-                <li><a href="#">FAQ's</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/blog']) ?>">Blog</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/faq']) ?>">FAQ's</a></li>
             </ul>
         </div>
         <div class="col-md-3 footer-grids fgd3">
-            <h4>Shop</h4>
+            <h4>Categories</h4>
             <ul>
-                <li><a href="#">Jewellery</a></li>
-                <li><a href="#">Cosmetics</a></li>
-                <li><a href="#">Shoes</a></li>
-                <li><a href="#">Deos</a></li>
+<!--                --><?php
+//                foreach ($categ as $cat){
+//                    ?>
+<!--                    <li><a href="--><?//= \yii\helpers\Url::to(['/shop/cat'])?><!--/--><?//= $cat['id']?><!--">--><?//= $cat['title'] ?><!--</a></li>-->
+<!--                    --><?php
+//                }
+//                ?>
             </ul>
         </div>
         <div class="col-md-3 footer-grids fgd4">

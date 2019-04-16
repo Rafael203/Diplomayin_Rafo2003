@@ -20,12 +20,12 @@
                                 ?>
                                     <?php
                                     if (empty($image["image_src"])) { ?>
-                                        <img src="<?= \yii\helpers\Url::to('@web/images/no-image.png') ?>" width="300px" class="img-responsive" alt="">
+                                        <img src="<?= \yii\helpers\Url::to('@web/images/no-image.png') ?>" width="300px" class="img-responsive" alt=""><br><br><br>
                                     <?php } else {
                                         ?>
                                         <div class="thumb-image detail_images"><img
                                                     src="<?= \yii\helpers\Url::to('@web/images/' . $image["image_src"]) ?>"
-                                                    data-imagezoom="true" class="img-responsive" alt=""></div>
+                                                    data-imagezoom="true" class="img-responsive"  style="border: 1px solid #0f0f0f; width: 100%" alt=""></div><br><br><br>
                                         <?php
                                     } ?>
                                 <?php
